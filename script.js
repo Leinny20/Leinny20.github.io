@@ -1,5 +1,5 @@
 function cifrar(palabra, clave) {
-    const alfabeto = 'abcdefghijklmnopqrstuvwxyz';
+    const alfabeto = 'abcdefghijklmnñopqrstuvwxyz';
     palabra = palabra.toLowerCase();
     let resultado = '';
 
@@ -18,7 +18,7 @@ function cifrar(palabra, clave) {
 }
 
 function descifrar(mensajeCifrado, clave) {
-    const alfabeto = 'abcdefghijklmnopqrstuvwxyz';
+    const alfabeto = 'abcdefghijklmnñopqrstuvwxyz';
     mensajeCifrado = mensajeCifrado.toLowerCase();
     let resultado = '';
 
