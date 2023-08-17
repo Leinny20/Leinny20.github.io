@@ -1,14 +1,15 @@
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
 function cifrar(palabra, clave) {
-    const alfabeto = 'abcdefghijklmnñopqrstuvwxyz';
     palabra = palabra.toLowerCase();
     let resultado = '';
 
     for (let i = 0; i < palabra.length; i++) {
         const letra = palabra[i];
-        if (alfabeto.includes(letra)) {
-            const indiceOriginal = alfabeto.indexOf(letra);
+        if (alphabet.includes(letra)) {
+            const indiceOriginal = alphabet.indexOf(letra);
             const indiceCifrado = (indiceOriginal + clave) % 26;
-            resultado += alfabeto[indiceCifrado];
+            resultado += alphabet[indiceCifrado];
         } else {
             resultado += letra;
         }
@@ -18,16 +19,15 @@ function cifrar(palabra, clave) {
 }
 
 function descifrar(mensajeCifrado, clave) {
-    const alfabeto = 'abcdefghijklmnñopqrstuvwxyz';
     mensajeCifrado = mensajeCifrado.toLowerCase();
     let resultado = '';
 
     for (let i = 0; i < mensajeCifrado.length; i++) {
         const letra = mensajeCifrado[i];
-        if (alfabeto.includes(letra)) {
-            let indiceCifrado = alfabeto.indexOf(letra);
-            indiceCifrado = (indiceCifrado - clave + 26) % 26; 
-            resultado += alfabeto[indiceCifrado];
+        if (alphabet.includes(letra)) {
+            let indiceCifrado = alphabet.indexOf(letra);
+            indiceCifrado = (indiceCifrado - clave + 26) % 26;
+            resultado += alphabet[indiceCifrado];
         } else {
             resultado += letra;
         }
@@ -36,14 +36,25 @@ function descifrar(mensajeCifrado, clave) {
     return resultado;
 }
 
+function tieneAcentos(palabra) {
+    const acentos = /[áéíóúÁÉÍÓÚ]/;
+    return acentos.test(palabra);
+}
+
 function cifrarTexto() {
     const mensajeOriginal = document.getElementById('mensaje_original').value;
     const clave = parseInt(document.getElementById('clave').value);
 
     if (mensajeOriginal.trim() === "") {
-        alert("Ingresa un mensaje para cifrar")
+        alert("Ingresa un mensaje para cifrar");
         return;
     }
+
+    if (tieneAcentos(mensajeOriginal)) {
+        alert("Ingresa solo letras sin acentos");
+        return;
+    }
+
     const mensajeCifrado = cifrar(mensajeOriginal, clave);
     document.getElementById('mensaje_cifrado').value = mensajeCifrado;
 }
@@ -53,10 +64,9 @@ function descifrarTexto() {
     const clave = parseInt(document.getElementById('clave').value);
 
     if (mensajeCifradoEntrada.trim() === "") {
-        alert("Ingresa un mensaje cifrado para descifrar")
+        alert("Ingresa un mensaje cifrado para descifrar");
         return;
     }
-
 
     const mensajeDescifrado = descifrar(mensajeCifradoEntrada, clave);
     document.getElementById('mensaje_descifrado').value = mensajeDescifrado;
