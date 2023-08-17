@@ -1,0 +1,68 @@
+body {
+    background: rgb(235,114,167);
+    background: radial-gradient(circle, rgba(235,114,167,1) 0%, rgba(90,156,232,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    
+    
+}
+
+h2 {
+    color: #fff;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 10px 10px 10px;
+    border-radius:  8px;
+    box-sizing: border-box;
+}
+
+.principal, .secundario {
+    text-align: center;
+    padding: 10px;
+}
+
+input {
+    width: 170px;
+    height: 50px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 85px;
+    height: 25px;
+    cursor: pointer;
+    border: none;
+    background-color: #6ea0d6;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #598fc8;
+}
+
+/* Estilos para el nuevo botón de Borrar */
+.button-borrar {
+    background-color: #d5838b;
+}
+
+.button-borrar:hover {
+    background-color: #d0646f;
+}
+
+  

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <section class="principal">
+                <h2>Mensaje original</h2>
+                <input id="mensaje_original" required type="text"><br>
+                <button onclick="cifrarTexto()" class="botones-principales">Cifrar</button>
+                <button onclick="borrarInputs('mensaje_original')" class="botones-principales button-borrar">Borrar</button>
+                <h2>Mensaje cifrado</h2>
+                <input id="mensaje_cifrado" type="text" disabled>
+            </section>
+            <section class="secundario">
+                <h2>Números <br> Desplazamiento</h2>
+                <input id="clave" required type="number" value="1">
+            </section>
+            <section class="secundario">
+                <h2>Mensaje cifrado</h2>
+                <input id="mensaje_cifrado_entrada" required type="text"><br>
+                <button onclick="descifrarTexto()" class="botones-principales">Descifrar</button>
+                <button onclick="borrarInputs('mensaje_cifrado_entrada')" class="botones-principales button-borrar">Borrar</button>
+                <h2>Mensaje original</h2>
+                <input id="mensaje_descifrado" type="text" disabled>
+            </section>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
+
