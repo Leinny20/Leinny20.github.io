@@ -26,7 +26,7 @@ function descifrar(mensajeCifrado, clave) {
         const letra = mensajeCifrado[i];
         if (alfabeto.includes(letra)) {
             let indiceCifrado = alfabeto.indexOf(letra);
-            indiceCifrado = (indiceCifrado - clave + 26) % 26; // Manejo de desplazamiento negativo
+            indiceCifrado = (indiceCifrado - clave + 26) % 26; 
             resultado += alfabeto[indiceCifrado];
         } else {
             resultado += letra;
