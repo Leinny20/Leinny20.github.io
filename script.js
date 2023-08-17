@@ -50,6 +50,11 @@ function cifrarTexto() {
         return;
     }
 
+    if (mensajeOriginal.length === 1) {
+        alert("Ingresa una palabra, no solo una letra");
+        return;
+    }
+
     if (tieneAcentos(mensajeOriginal)) {
         alert("Ingresa solo letras sin acentos");
         return;
